@@ -4,11 +4,11 @@ Simple implementation of the Hl7 FHIR library in an ASP.NET Core MVC application
 
 ## Getting Started
 
-###Before You Begin
+### Before You Begin
 
 As this project was created in .NET Core, Visual Studio 2017 is required to run this project.
 
-###Downloading the Application
+### Downloading the Application
 
 The source code for this application can be found on the Innovation Lab code sharing repository at https://innovation-lab.ca/repository/ViewRepository?id=26902277-1107-4c7d-93b1-a5aa49c1b07d
 
@@ -26,7 +26,7 @@ This identifier is required to send messages to the DHDR and DHIR endpoints. Onc
 protected static string SenderId = "Unique-Sender-Identifier";
 ```
 
-###Trouble Shooting the Application
+### Trouble Shooting the Application
 
 A forum for any questions or concerns with this starter project is being hosted on the innovation lab at https://innovation-lab.ca/discussions/topic/q-a-for-fhir-in-c/. 
 
