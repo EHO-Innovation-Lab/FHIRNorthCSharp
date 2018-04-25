@@ -1,0 +1,65 @@
+﻿@model SampleFhirApp.Models.Builder.DhirBuilderModel
+
+<script src="~/js/site.js"></script>
+<form asp-controller="Dhir" asp-action="BuildMessage" data-ajax="true" data-ajax-method="POST" data-ajax-update="#request" data-ajax-mode="replace">
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="form-group form-inline">
+                <div class="col-md-8">
+                    <label asp-for="ImmunizationId" class="control-label">*@Html.DisplayNameFor(m => Model.ImmunizationId):</label>
+                    <input asp-for="ImmunizationId" id="immunizationId" type="text" class="form-control" required />
+                    <div id="sampleMessage" class="btn btn-info">Sample Id</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <label class="col-md-6">Include Resources: </label>
+                </div>
+                <div class="form-group form-inline">
+                    <div class="col-md-6">
+                        <input asp-for="IncludePatient" type="checkbox" />
+                        <label asp-for="IncludePatient">@Html.DisplayNameFor(m => Model.IncludePatient)</label>
+                    </div>
+                </div>
+
+                <div class="form-group form-inline">
+                    <div class="col-md-6">
+                        <input asp-for="IncludeProvider" type="checkbox" />
+                        <label asp-for="IncludeProvider">@Html.DisplayNameFor(m => Model.IncludeProvider)</label>
+                    </div>
+                </div>
+
+                <div class="form-group form-inline">
+                    <div class="col-md-12">
+                        <input asp-for="IncludeRecommendation" type="checkbox" />
+                        <label asp-for="IncludeRecommendation">@Html.DisplayNameFor(m => Model.IncludeRecommendation)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <label>@Html.DisplayNameFor(m => Model.Format):</label>
+            </div>
+            <div class="form-group form-inline">
+                <input type="radio" id="json" asp-for="Format" value="application/fhir+json" checked="checked" />
+                <label for="json">Json</label>
+            </div>
+            <div class="form-group form-inline">
+                <input type="radio" id="xml" asp-for="Format" value="application/fhir+xml" />
+                <label for="xml">XML</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group form-inline">
+            <input type="submit" class="btn btn-primary col-md-2 pull-right" value="Generate Message" />
+            <input type="reset" class="btn btn-warning col-md-1" />
+        </div>
+    </div>
+
+</form>
+
+
+
+

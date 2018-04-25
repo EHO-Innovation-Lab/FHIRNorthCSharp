@@ -1,0 +1,36 @@
+﻿<br/>
+<div class="panel-group">
+    <div class="panel panel-default resource-panel">
+        <div class="panel-heading">
+            <h4 class="panel-title"><span class="glyphicon glyphicon-send"></span> Select a Service</h4>
+        </div>
+        <div class="panel panel-body">
+            <div class="criteria-builder-styling">
+                <form asp-action="Select" asp-controller="Home" data-ajax="true" data-ajax-method="POST" data-ajax-update="#builder" data-ajax-mode="replace">
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group form-inline">
+                                <div class="col-md-6">
+                                    <label for="service" class="control-label">Service: </label>
+                                    <select name="service" id="service" class="form-control">
+                                        <option value="Dhir">Digital Health Immunization Repository (DHIR)</option>
+                                        <option value="Dhdr">Digital Health Drug Repository (DHDR)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 pull-right hidden">
+                                    <input type="submit" value="Start" id="submitService" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div id="builder">@Html.Partial("~/Views/Builder/_Dhir.cshtml")</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="request"></div>
+

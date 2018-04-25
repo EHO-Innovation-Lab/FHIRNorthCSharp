@@ -1,0 +1,126 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+div.criteria-builder-styling
+label.bold-text {
+    font-weight: bold !important;
+}
+
+.required-asterisk {
+    font-weight: bold !important;
+}
+
+/*div.criteria-builder-styling 
+label.custom-input-label {
+    
+    padding-top: 3px !important;       
+    font-size: 1.79rem;        
+}*/
+
+
+
+div.criteria-builder-styling
+label.oid-sample-text {
+    padding-top: 3px !important;
+    font-family: "MyriadCnd";
+    font-size: 1.8rem;
+    color: #555F6B;
+    padding-left: 0 !important;
+}
+
+div.criteria-builder-styling
+label.bulletin-text {
+    font-weight: 500 !important;
+    font-family: "MyriadCnd";
+    font-size: 1.7rem;
+    color: #555F6B;
+}
+
+div.criteria-builder-styling label.criteria-builder-label-title {
+    font-weight: bold !important;
+    padding-top: 0 !important;
+    font-size: 2.0rem !important;
+}
+
+div.criteria-builder-styling span.criteria-builder-span-title {
+    font-weight: normal !important;
+    font-size: 1.79rem !important;
+    padding-left: 10px;
+}
+
+div.criteria-builder-styling label.criteria-builder-radio-title {
+    font-weight: normal !important;
+    padding-top: 0 !important;
+    font-size: 2.0rem !important;
+}
+
+div.criteria-builder-styling label.criteria-builder-label-selection {
+    font-weight: normal !important;
+    font-size: 1.79rem !important;
+}
+
+div.criteria-builder-styling label.criteria-builder-label-selection-checkbox {
+    font-weight: normal !important;
+    font-size: 1.79rem !important;
+    padding-top: 5px !important;
+}
+
+div.criteria-builder-styling label.control-label {
+    font-weight: normal !important;
+    padding-top: 3px !important;
+    font-size: 1.79rem !important;
+}
+
+
+div.criteria-builder-styling {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 20px 40px 10px 40px;
+    margin: 0px 30px 0 30px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+    div.criteria-builder-styling.optional-step {
+        background: #DCDCDC;
+    }
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 25em;
+}

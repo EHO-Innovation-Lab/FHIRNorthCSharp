@@ -1,0 +1,115 @@
+﻿@model SampleFhirApp.Models.Message.ResponseModel
+
+<div class="panel-group">
+    <div class="panel panel-default resource-panel">
+        <div class="panel-heading">
+            <h4 class="panel-title"><span class="glyphicon glyphicon-import"></span>Response</h4>
+        </div>
+        <div class="panel-body">
+            <div class="criteria-builder-styling">
+                @if (Model.PatientNames.Any())
+                {
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Patient Name:</label>
+                        </div>
+                        <div class="col-md-6">
+                            @foreach (var name in Model.PatientNames)
+                            {
+                                <p>
+                                    @name.Given @name.Last
+                                </p>
+
+                            }
+                        </div>
+                    </div>
+                }
+                @if (Model.PractitionerNames != null && Model.PractitionerNames.Any())
+                {
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Practitioner Name:</label>
+                        </div>
+                        <div class="col-md-6">
+                            @foreach (var name in Model.PractitionerNames)
+                            {
+                            <p>
+                                @name.Given @name.Last
+                            </p>
+
+                            }
+                        </div>
+                    </div>
+                }
+                @if (Model.Immunizations != null && Model.Immunizations.Any())
+                {
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Vaccine Codes:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>System</th>
+                                        <th>Code</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var code in Model.Immunizations)
+                                    {
+                                        <tr>
+                                            <td>@code.System</td>
+                                            <td>@code.Code</td>
+                                            <td>@code.Display</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+                @if (Model.Medications != null && Model.Medications.Any())
+                {
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Medication Codes:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>System</td>
+                                        <td>Code</td>
+                                        <td>Display</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var code in Model.Medications)
+                                    {
+                                    <tr>
+                                        <td>@code.System</td>
+                                        <td>@code.Code</td>
+                                        <td>@code.Display</td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>@Html.DisplayNameFor(m => Model.Response): </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <textarea rows="10" id="response" readonly>@Model.Response</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="response"></div>

@@ -1,0 +1,96 @@
+﻿@model SampleFhirApp.Models.Builder.DhdrBuilderModel
+<script src="~/js/site.js"></script>
+
+<form asp-controller="Dhdr" asp-action="BuildMessage" data-ajax="true" data-ajax-method="POST" data-ajax-update="#request" data-ajax-mode="replace">
+    <input asp-for="QueryType" hidden id="queryType" value="1-Point" />
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="form-group form-inline">
+                <div class="col-md-8">
+                    <label asp-for="HealthCardNumber" class="control-label">*@Html.DisplayNameFor(m => Model.HealthCardNumber):</label>
+                    <input asp-for="HealthCardNumber" id="healthCardNumber" type="text" class="form-control" required />
+                    <div id="dhdrSampleMessage" class="btn btn-info">Sample Message</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Toggle Query: </label>
+                    <div id="toggleDhdr" class="btn btn-primary">1-Point</div>
+                </div>
+            </div>
+            <br />
+            <div class="col-md-6">
+                <div class="row">
+                    <label>Date Handed Over: </label>
+                </div>
+                <div class="form-group form-inline">
+                    <div class="col-md-6">
+                        <label asp-for="Date">@Html.DisplayNameFor(m => Model.Date): </label>
+                        <input asp-for="Date" type="date" class="form-control" id="dateDispensed" />
+                    </div>
+                </div>
+
+                <div class="form-group form-inline">
+                    <div class="col-md-6">
+                        <label asp-for="DateModifier">@Html.DisplayNameFor(m => Model.DateModifier): </label>
+                        <select asp-for="DateModifier" class="form-control">
+                            <option value="" selected></option>
+                            <option value="eq">eq</option>
+                            <option value="ge">ge</option>
+                            <option value="le">le</option>
+                            <option value="gt">gt</option>
+                            <option value="lt">lt</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <label>@Html.DisplayNameFor(m => Model.Format):</label>
+                </div>
+                <div class="form-group form-inline">
+                    <div class="col-md-6">
+                        <input type="radio" id="json" asp-for="Format" value="application/fhir+json" checked="checked" />
+                        <label for="json">Json</label>
+                    </div>
+                </div>
+                <div class="form-group form-inline">
+                    <div class="col-md-6">
+                        <input type="radio" id="xml" asp-for="Format" value="application/fhir+xml" />
+                        <label for="xml">XML</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <label>3-Point Match:</label>
+                </div>
+                <div class="form-group form-inline">
+                    <div class="col-md-8">
+                        <label asp-for="DateOfBirth">@Html.DisplayNameFor(m => m.DateOfBirth): </label>
+                        <input asp-for="DateOfBirth" id="dateOfBirth" type="date" class="form-control" disabled />
+                    </div>
+                </div>
+                <div class="form-group form-inline">
+                    <div class="col-md-6">
+                        <label asp-for="Gender">@Html.DisplayNameFor(m => m.Gender): </label>
+                        <select asp-for="Gender" id="gender" class="form-control" disabled>
+                            <option value="" selected></option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group form-inline">
+            <input type="submit" class="btn btn-primary col-md-2 pull-right" value="Generate Message" />
+            <input type="reset" class="btn btn-warning col-md-1" />
+        </div>
+    </div>
+</form>
+
+
+
+

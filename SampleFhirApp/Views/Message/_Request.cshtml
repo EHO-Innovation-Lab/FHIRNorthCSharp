@@ -1,0 +1,47 @@
+﻿@model SampleFhirApp.Models.Message.RequestModel
+
+<div class="panel-group">
+    <div class="panel panel-default resource-panel">
+        <div class="panel-heading">
+            <h4 class="panel-title"><span class="glyphicon glyphicon-export"></span>Request</h4>
+        </div>
+        <div class="panel-body">
+            <div class="criteria-builder-styling">
+                @if(Model.Headers != null && Model.Headers.Any()) { 
+                <div class="row">
+                    <label>Http Headers: </label>
+                    @{ 
+                        string header = "";
+                        for (int i = 0; i < Model.Headers.Count(); i++)
+                        {
+                            header += Model.Headers.ElementAt(i).Key + ": " + @Model.Headers.ElementAt(i).Value + "\n";
+                        }
+                    }
+                    <textarea disabled="disabled" readonly="readonly" rows="5">@header</textarea>
+                </div>
+                        }
+                <div class="row">
+                    <label>Message: </label>
+                </div>
+                <div class="row">
+                    <textarea rows="3" id="request" readonly>@Model.RequestMessage.AbsoluteUri</textarea>
+                </div>
+
+                <form asp-controller="@Model.MessageType" asp-action="SendMessage" data-ajax="true" data-ajax-method="POST" data-ajax-update="#response" data-ajax-mode="replace">
+                    <input asp-for="RequestMessage" hidden />
+                    <input asp-for="Format" hidden />
+                    <input asp-for="Id" hidden />
+                    <div class="row">
+                        <div class="form-group form-inline pull-right">
+                            <div class="col-md-1">
+                                <input type="submit" class="btn btn-primary" value="Send Message" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="response"></div>
