@@ -32,7 +32,7 @@ A forum for any questions or concerns with this starter project is being hosted 
 
 ## Libraries Used
 
-This project makes use of the Hl7.FHIR STU3 library. https://github.com/ewoutkramer/FHIR-net-api.
+This project makes use of the Hl7.FHIR DSTU2 library. https://github.com/ewoutkramer/FHIR-net-api.
 
 This library is used to communicate with the FHIR endpoints, as well as retrieve information out of the bundles. This is the official .NET API for Hl7 FHIR.
 
